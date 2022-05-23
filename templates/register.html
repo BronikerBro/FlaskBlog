@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlaskBlogRegister</title>
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/4922/4922073.png">
+    <style type="text/css">
+        main {
+            align-items: center;
+            height: auto;
+            min-height: 873px;
+            min-width: 1912px;
+            background-image: url(https://hyperhost.ua/info/storage/uploads/2020/03/blog.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-size: 100% 100%;
+        }
+        div{
+            max-width: 1912px;
+        }
+        .regform{
+            background-color: rgba(106, 252, 233, 0.95);
+            border-radius: 30px;
+            width: 500px;
+            height: 800px;
+        }
+        .inp{
+            min-width: 400px;
+        }
+        .txt{
+            color: white;
+            font-family: "Bradley Hand", cursive;
+            font-size: 25px;
+        }
+        .txt-t{
+            color: white;
+            font-family: "Bradley Hand", cursive;
+            font-size: 40px;
+            font-weight: 900;
+        }
+        .btnn{
+            width: 300px;
+            color: white;
+            font-family: "Bradley Hand", cursive;
+            font-size: 50px;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand link-light" href="/">
+                <img src="{{url_for('static', filename='images/icon.png')}}" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                FlaskBlog
+            </a>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="link-light nav-link" aria-current="page" href="/">Home</a>
+                    <a class="link-light nav-link" href="/register">Register</a>
+                </div>
+            </div>
+          </div>
+
+        </nav>
+    </header>
+
+    <main align="center">
+        <div align="center" class="regform position-absolute top-50 start-50 translate-middle">
+            <h1 class="txt-t"><br>Register<br><br></h1>
+            <div class="mb-3 row">
+                <label for="name" class="txt form-label">Name</label>
+                <div class="col-sm-30">
+                    <input type="text" class="inp form-control-lg" id="name">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="mail" class="txt form-label">Email address</label>
+                <div class="col-sm-30">
+                    <input type="email" class="inp form-control-lg" id="mail" placeholder="name@example.com">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="inputPassword" class="txt form-label">Password</label>
+                <div class="col-sm-30">
+                    <input type="password" class="inp form-control-lg" id="inputPassword">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="confPassword" class="txt form-label">Confirm password</label>
+                <div class="col-sm-30">
+                    <input type="password" class="inp form-control-lg" id="confPassword">
+                </div>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+              <label class="txt form-check-label" for="inlineRadio1">Man</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+              <label class="txt form-check-label" for="inlineRadio2">Woman</label>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <input class="btnn btn btn-primary btn-lg" type="submit" value="Submit">
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>
