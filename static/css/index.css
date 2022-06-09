@@ -1,0 +1,19 @@
+body {
+    min-height:100px;
+    display:flex;
+    flex-direction:column;
+    margin:0;
+}
+html,main {
+    background-color:aqua;
+    align-items: center;
+}
+main{
+    align-items: center;
+}
+.txt-t{
+    color: white;
+    font-family: "Bradley Hand", cursive;
+    font-size: 40px;
+    font-weight: 900;
+}

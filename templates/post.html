@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+<title>{{post['title']}}</title>
+{% endblock %}
+{% block content %}
+<div class = "sticky-top p-3 mb-2 rounded-5 mx-auto" style="align:center;background-color:rgb(255, 255, 255);width: 98%">
+    <h1 class="fw-bold" style="font-family: 'Bradley Hand', cursive;">{{post['title']}}</h1>
+    <br>
+    <hr>
+    <br>
+    <h3 style="font-family: 'Bradley Hand', cursive;">{{post['content']}}</h3>
+
+    <p style = "font-family: 'Bradley Hand', cursive;">{{post['created_at']}}</p>
+</div>
+{% endblock %}
