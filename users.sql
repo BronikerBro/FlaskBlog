@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS user(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name NOT NULL,
+    gmail NOT NULL,
+    password NOT NULL,
+    mw NOT NULL
+)

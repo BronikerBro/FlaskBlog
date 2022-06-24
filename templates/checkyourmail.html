@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/register.css')}}">
+<title>FlaskBlogRegister</title>
+{% endblock %}
+{% block content %}
+<form method = "post" action = "{{ url_for('check_your_mail')}}">
+<div align="center" class="check regform position-absolute top-50 start-50 translate-middle">
+    <br>
+    <h1 class = "txt-t">Please, check your mail <br> to confirm it's you!</h1>
+    <br>
+    <a href = "https://www.google.com/intl/ru/gmail/about/"  target="_blank"><img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png" width="200" height="200" alt = "mail photo"></a>
+    <br>
+    <div class="mb-3 row">
+        <label for="code" class="txt form-label">Code</label>
+        <div class="col-sm-30">
+            <input type="text" class="inp form-control-lg" id="code" name="code">
+        </div>
+    </div>
+    <br>
+    <h3 class="warn">{{error}}</h3>
+    <br>
+
+    <input class="btnn btn btn-primary btn-lg" type="submit" value="Check" name = "check_code">
+    <br>
+    <br>
+</div>
+</form>
+{% endblock %}

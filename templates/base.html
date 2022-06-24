@@ -6,6 +6,9 @@
      <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/4922/4922073.png"" >
     {% block title %}
     {% endblock %}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
 </head>
@@ -19,8 +22,12 @@
             </a>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="link-light nav-link" aria-current="page" href="/">Home</a>
-                    <a class="link-light nav-link" href="/register">Register</a>
+                    <a class="link-light nav-link" aria-current="page" href="{{ url_for('index') }}">Home</a>
+                    <a class="link-light nav-link" href="{{ url_for('new_post')}}">Create</a>
+                    <a class="link-light nav-link" href="{{ url_for('register')}}">Register</a>
+                    <a class="link-light nav-link" href="{{ url_for('login')}}">Login</a>
+                    <a class="link-light nav-link" style="position: absolute;right: 60px;" href="{{ url_for('index')}}">{{user_name}}</a>
+                    <a href="{{ url_for('edit_account')}}" style="text-decoration:none;position: absolute;right: 20px;top:15px;border:none;"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16"><path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z"/></svg></a>
                 </div>
             </div>
           </div>
@@ -29,4 +36,10 @@
     </header>
     <main style="text-align: center; align-items:center">{% block content %}{% endblock %}</main>
 </body>
+
+<script>
+{% block scripting %}{% endblock %}
+</script>
+</html>
+
 

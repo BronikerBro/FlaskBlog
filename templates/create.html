@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+<title>Create Blog</title>
+<style>
+.warn {
+    align-items:center;
+    background-color: #dc3545;
+    color: white;
+    font-family: "Bradley Hand", cursive;
+    font-size: 25px;
+    width: 75%;
+    border-radius: 30px;
+}
+</style>
+{% endblock %}
+{% block content %}
+
+<div class="sticky-top p-3 mb-2 rounded-5 mx-auto" style = "align-items:center;width: 75vw; background-color:white;">
+<form method = "post" action = "{{ url_for('new_post') }}">
+    <br>
+    <div class="mb-3">
+        <label for="title" class="txt form-label">Post Title</label>
+        <input maxlength="255" value="{{title}}" type="text" class="form-control" name="title" id="title" placeholder = "Your post title">
+    </div>
+    <div class="mb-3">
+        <label for="content" class="txt form-label">Post Content</label>
+        <textarea class="form-control" name="content" id="content" placeholder = "Your post content">{{content}}</textarea>
+    </div>
+    <div class="mb-3">
+    <h3 class="warn mx-auto">{{error}}</h3>
+    </div>
+    <div class="mb-3">
+    <input class="btn btn-primary btn-lg" type="submit" value="Create" name = "submit_btn">
+    </div>
+
+</form>
+</div>
+{% endblock %}

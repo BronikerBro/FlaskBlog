@@ -7,13 +7,14 @@
 <h1 class="txt-t">Welcome to the FLASKBLOG, {{ name }}</h1>
 {% for post in posts %}
 <div class="card text-center mx-auto" style="width: 95%; border-radius: 30px;width: 90%">
-    <div class="card-header">By author</div>
+    <div class="card-header">By {{post['author']}}</div>
     <div class="card-body">
         <h5 class="card-title">{{post['title']}}</h5>
         <p class="card-text"><span class="d-inline-block text-truncate" style="max-width:500px">{{post['content']}}</span></p>
-        <a href = "{{post['id']}}" class="btn btn-primary">Read more</a>
+        <a href = "{{ url_for('post',post_id = post['id']) }}" class="btn btn-primary">Read more</a>
     </div>
     <div class="card-footer text-muted">{{post['created_at']}}</div>
 </div>
+<br>
 {% endfor %}
 {% endblock %}

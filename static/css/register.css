@@ -15,17 +15,25 @@ main {
     background-size: cover;
     background-size: 100vw 100vh;
 }
+.check {
+     background-color: rgba(106, 252, 233, 1);
+     width: auto;
+}
 .regform{
     background-color: rgba(106, 252, 233, 0.95);
     border-radius: 30px;
-    width: 500px;
-    height: 800px;
+    width: 25vw;
+    height: auto;
 }
 .inp{
     min-width: 400px;
 }
 .txt{
     color: white;
+    font-family: "Bradley Hand", cursive;
+    font-size: 25px;
+}
+.txt-a{
     font-family: "Bradley Hand", cursive;
     font-size: 25px;
 }

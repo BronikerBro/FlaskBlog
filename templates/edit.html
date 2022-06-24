@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+<title>Create Blog</title>
+<style>
+.warn {
+    align-items:center;
+    background-color: #dc3545;
+    color: white;
+    font-family: "Bradley Hand", cursive;
+    font-size: 25px;
+    width: 75%;
+    border-radius: 30px;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="sticky-top p-3 mb-2 rounded-5 mx-auto" style = "align-items:center;width: 75vw; background-color:white;">
+<form method = "post" action = "{{ url_for('edit', post_id = post.id) }}">
+    <br>
+    <div class="mb-3">
+        <label for="title" class="txt form-label">Post Title</label>
+        <input maxlength="255" value="{{post.title}}" type="text" class="form-control" name="title" id="title" placeholder = "Change your post title">
+    </div>
+    <div class="mb-3">
+        <label for="content" class="txt form-label">Post Content</label>
+        <textarea class="form-control" name="content" id="content" placeholder = "Change your post content">{{post.content}}</textarea>
+    </div>
+    <div class="mb-3">
+    <h3 class="warn mx-auto">{{error}}</h3>
+    </div>
+    <div class="mb-3">
+    <input class="btn btn-primary btn-lg" type="submit" value="Edit" name = "submit_button"> or <input class="btn btn-danger btn-lg" type="submit" value="Delete" name = "submit_button"></div>
+
+
+</form>
+</div>
+{% block modal %}{% endblock %}
+{% endblock %}
+
+{% block scripting %}
+{% block script %}{% endblock %}
+{% endblock %}

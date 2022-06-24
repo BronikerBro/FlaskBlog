@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/register.css')}}">
+<title>FlaskBlogChangePassword</title>
+{% endblock %}
+{% block content %}
+<form method = "post" action = "{{ url_for('change_password')}}">
+<div align="center" class="regform position-absolute top-50 start-50 translate-middle">
+    <h1 class="txt-t"><br>Change Password<br><br></h1>
+    <div class="mb-3 row">
+        <label for="mail" class="txt form-label">Email address</label>
+        <div class="col-sm-30">
+            <input type="email" class="inp form-control-lg" id="mail" value="{{i.mail}}" name="mail" placeholder="name@example.com">
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label for="inputPassword1" class="txt form-label">New password</label>
+        <div class="col-sm-30">
+            <input type="password" value = "{{i.passw}}" class="inp form-control-lg" id="inputPassword1" name="inputPassword1">
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label for="inputPassword1" class="txt form-label">New password again</label>
+        <div class="col-sm-30">
+            <input type="password" value = "{{i.cpassw}}" class="inp form-control-lg" id="checkPassword1" name="checkPassword1">
+        </div>
+    </div>
+    <h3 class="warn">{{i.error}}</h3>
+    <br>
+    <a href = ""><input class="btnn btn btn-primary btn-lg" type="submit" value="Change" name = "submit_btn"></a>
+    <br>
+    <br>
+</div>
+</form>
+{% endblock %}
